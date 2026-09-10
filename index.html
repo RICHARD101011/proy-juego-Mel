@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#1f1533" />
+  <title>Quiero que estemos bien</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <main class="app">
+    <!-- INICIO -->
+    <section id="inicio" class="screen active">
+      <article class="panel intro">
+        <div class="photo-row">
+          <label class="photo-card">
+            <input id="photoMe" type="file" accept="image/*">
+            <div class="photo-shell">
+              <img id="imgMe" alt="Tu foto">
+              <span id="meFallback">Tu foto</span>
+            </div>
+            <small>Tú</small>
+          </label>
+
+          <div class="connection">
+            <span class="spark">✦</span>
+            <span class="heart">♡</span>
+            <span class="spark">✦</span>
+          </div>
+
+          <label class="photo-card">
+            <input id="photoHer" type="file" accept="image/*">
+            <div class="photo-shell">
+              <img id="imgHer" alt="Su foto">
+              <span id="herFallback">Su foto</span>
+            </div>
+            <small>Ella</small>
+          </label>
+        </div>
+
+        <p class="kicker">No es un juego para ganar o perder</p>
+        <h1>Solo quería encontrar una forma bonita de decirte algo.</h1>
+        <p class="lead">
+          Sé que tuvimos un mal momento. No quiero fingir que no pasó,
+          pero tampoco quiero que eso borre lo bonito que hemos compartido.
+        </p>
+
+        <button class="btn primary" data-next="camino">Quiero seguir →</button>
+        <button id="clearPhotos" class="btn ghost">Cambiar fotos</button>
+      </article>
+    </section>
+
+    <!-- CAMINO -->
+    <section id="camino" class="screen">
+      <article class="panel">
+        <p class="kicker">Parte 1 · Cosas que sí siento</p>
+        <h2>Toca cada luz</h2>
+        <p class="soft">No hay respuestas correctas. Solo pequeños mensajes que quería dejarte.</p>
+
+        <div class="lights-grid">
+          <button class="light" data-message="Me importas más de lo que a veces sé expresar.">✦</button>
+          <button class="light" data-message="No quiero tener la razón si eso significa alejarnos.">✦</button>
+          <button class="light" data-message="Me gusta seguir descubriendo quién eres, poco a poco.">✦</button>
+          <button class="light" data-message="Si te hice sentir mal, quiero aprender de eso y hacerlo mejor.">✦</button>
+          <button class="light" data-message="No quiero apresurar nada. Solo quiero que podamos estar bien.">✦</button>
+        </div>
+
+        <div id="messageBox" class="message-box">
+          <span>✨</span>
+          <p>Toca una luz para descubrir un mensaje.</p>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress"><span id="progressBar"></span></div>
+          <small id="progressText">0 de 5 mensajes</small>
+        </div>
+
+        <button id="continueBtn" class="btn primary hidden" data-next="pregunta">Continuar →</button>
+      </article>
+    </section>
+
+    <!-- PREGUNTA -->
+    <section id="pregunta" class="screen">
+      <article class="panel">
+        <div class="mini-photos">
+          <img id="qMe" alt="">
+          <span>♡</span>
+          <img id="qHer" alt="">
+        </div>
+
+        <p class="kicker">Parte 2 · Sin presión</p>
+        <h2>Si pudiéramos dejar este mal momento atrás…</h2>
+        <p class="soft">¿Qué te gustaría que pasara después?</p>
+
+        <div class="choices">
+          <button data-choice="hablar">💬 Hablar con calma</button>
+          <button data-choice="vernos">☕ Compartir un rato</button>
+          <button data-choice="despacio">🌙 Ir despacio y estar bien</button>
+          <button data-choice="tiempo">✨ Darnos un poco de tiempo</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- FINAL -->
+    <section id="final" class="screen">
+      <article class="panel final-panel">
+        <div class="final-photos">
+          <img id="finalMe" alt="">
+          <div class="final-heart">♡</div>
+          <img id="finalHer" alt="">
+        </div>
+
+        <p class="kicker">Y esto era lo que quería decirte</p>
+        <h2>Quiero que estemos bien.</h2>
+
+        <div class="letter">
+          <p>
+            No hice esto para convencerte de nada ni para hacer como si no hubiera pasado.
+            Lo hice porque me importas y porque prefiero ser sincero contigo.
+          </p>
+          <p id="choiceLine"></p>
+          <p>
+            Me gusta conocerte, hablar contigo y compartir momentos contigo.
+            Si podemos arreglar esto, me gustaría hacerlo con calma, con respeto
+            y sin dejar que el orgullo hable por nosotros.
+          </p>
+          <p class="signature">— Con cariño ♡</p>
+        </div>
+
+        <button id="replay" class="btn primary">Volver a verlo</button>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
